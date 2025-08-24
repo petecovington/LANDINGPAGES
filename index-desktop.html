@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Deep Dive - Break Through Your Creative Blocks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            line-height: 1.7;
+            color: #2c2c2c;
+            background: #dbbea2;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #dbbea2;
+            color: #2c2c2c;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .subhead {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 20px;
+            line-height: 1.5;
+        }
+
+        .hero .subhead-small {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            margin: 0 auto 40px;
+        }
+
+        /* Main Content Sections */
+        .section {
+            padding: 80px 0;
+            background: #dbbea2;
+        }
+
+        .section-alt {
+            background: #c9a882;
+        }
+
+        .section h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: #2c2c2c;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .section h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #2c2c2c;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .section p strong {
+            font-weight: 600;
+        }
+
+        .section p strong em {
+            font-style: italic;
+            font-weight: 700;
+        }
+
+        /* CTA Buttons */
+        .cta-button {
+            display: inline-block;
+            background: #2c2c2c;
+            color: #dbbea2;
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid #2c2c2c;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cta-button:hover {
+            background: #dbbea2;
+            color: #2c2c2c;
+            border: 2px solid #2c2c2c;
+        }
+
+        .cta-center {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        /* Testimonials */
+        .testimonial {
+            padding: 60px 40px;
+            margin: 0;
+            text-align: center;
+        }
+
+        .testimonial-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            margin: 0 auto 30px auto;
+            display: block;
+            border: 3px solid #2c2c2c;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+
+        .testimonial-quote {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: #2c2c2c;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-family: 'Crimson Text', serif;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #444444;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Testimonial Background Alternating */
+        .testimonial-light {
+            background: #dbbea2;
+        }
+
+        .testimonial-dark {
+            background: #c9a882;
+        }
+
+        /* Section Images */
+        .section-image {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .section-image img {
+            max-width: 200px;
+            height: auto;
+            opacity: 0.8;
+        }
+
+        /* Benefits List */
+        .benefits {
+            background: #c9a882;
+            padding: 40px;
+            border-radius: 4px;
+            margin: 40px 0;
+            border: 2px solid #2c2c2c;
+        }
+
+        .benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits li {
+            font-size: 1.3rem;
+            padding: 15px 0;
+            border-bottom: 1px solid #a89070;
+            position: relative;
+            padding-left: 40px;
+            color: #2c2c2c;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2c2c2c;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .benefits li:last-child {
+            border-bottom: none;
+        }
+
+        /* Qualification Lists */
+        .qualification {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 50px 0;
+        }
+
+        .qualification-box {
+            padding: 30px;
+            border-radius: 4px;
+            background: #dbbea2;
+            border: 2px solid #2c2c2c;
+        }
+
+        .for-you {
+            border-left: 5px solid #2c2c2c;
+        }
+
+        .not-for-you {
+            border-left: 5px solid #777777;
+        }
+
+        .qualification h4 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2c2c2c;
+            font-weight: 600;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .qualification ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .qualification li {
+            padding: 10px 0;
+            font-size: 1.2rem;
+            color: #2c2c2c;
+            font-family: 'Crimson Text', serif;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background: #c9a882;
+            color: #2c2c2c;
+            padding: 80px 0;
+            text-align: center;
+            border-top: 3px solid #2c2c2c;
+        }
+
+        .price {
+            font-size: 4rem;
+            font-weight: 700;
+            margin: 30px 0;
+        }
+
+        .price-note {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: #dbbea2;
+            padding: 80px 0;
+            border-top: 3px solid #2c2c2c;
+        }
+
+        .faq h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            color: #2c2c2c;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .faq-item {
+            margin-bottom: 40px;
+        }
+
+        .faq-question {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c2c2c;
+        }
+
+        .faq-answer {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #2c2c2c;
+        }
+
+        .contact-note {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 1.2rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subhead {
+                font-size: 1.2rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .qualification {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+
+            .testimonial-avatar {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. Hero Section + CTA (light tan) -->
+    <section class="hero">
+        <div class="container">
+            <h1>I Know Why Your Best Songs Stay Trapped in Voice Memos and Half-Done Sessions.</h1>
+            <p class="subhead">Get the outside perspective and clear next steps you need to finally finish what you've started—without losing what makes it yours.</p>
+            <p class="subhead">The Song Deep Dive call with Pete Covington.</p>
+            <p class="subhead-small">For songwriters and self-producing artists.</p>
+            <div class="cta-center">
+                <a href="#booking" class="cta-button">Book Your Song Deep Dive →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Eliza's Testimonial (dark tan) -->
+    <section class="testimonial testimonial-dark">
+        <div class="container">
+            <img src="avatars/eliza_hull_360.jpg" alt="Eliza Hull" class="testimonial-avatar">
+            <div class="testimonial-quote">"Working with Pete was incredibly affirming and inspiring. He created such a supportive and open space that made me feel safe to be vulnerable and honest in sharing my songs. Pete has a real gift. He'll help you connect with your truth and bring it to life in ways that feel authentic and exciting. I walked away from our session feeling more sure of myself and creatively energised."</div>
+            <div class="testimonial-author">– Eliza Hull, Singer-Songwriter, AU</div>
+        </div>
+    </section>
+
+    <!-- 3. You've Got Journals Section (light tan) -->
+    <section class="section">
+        <div class="container">
+            <p>You've got journals full of lyrics. Voice memos scattered across your phone. And a folder full of demos that keeps growing. So why is finishing (or feeling good about) your song still so hard?</p>
+            <p>Maybe it's that voice saying "this chord progression is too predictable." Maybe it's the 47th revision that somehow sounds worse than the first. Maybe it's that gnawing feeling that you're running out of time to make something that matters.</p>
+            <p><strong style="font-style: italic;">I get it.</strong> <strong>Because I've been exactly where you are.</strong></p>
+        </div>
+    </section>
+
+    <!-- 4. The Gap Between Vision and Reality + CTA (dark tan) -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>The Gap Between Vision and Reality</h2>
+            <p>Pretty much every songwriter has experienced this. The gap between what you hear in your head and what comes out in the room.</p>
+            <p>That gap fills with doubt. With overthinking. With the weight of every song you've ever loved and the fear that yours won't measure up.</p>
+            <p>I spent years in that gap myself—obsessing over snare sounds for three hours while the song itself barely existed yet. Letting my perfectionism convince me that one more revision would finally make it "right." Writing and rewriting the same verse until I couldn't even remember what I liked about the idea in the first place. Then I learned something that changed how I approach every session.</p>
+            <div class="cta-center">
+                <a href="#booking" class="cta-button">Book Your Song Deep Dive →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Steph's Testimonial (light tan) -->
+    <section class="testimonial testimonial-light">
+        <div class="container">
+            <img src="avatars/steph_wood_360.jpg" alt="Steph Wood" class="testimonial-avatar">
+            <div class="testimonial-quote">"Working with Pete really helped me to think outside the box and to push further in my writing than I usually would. He helped me to see past what I found comfortable and challenge myself to go further."</div>
+            <div class="testimonial-author">– Steph Wood, Singer-Songwriter, UK</div>
+        </div>
+    </section>
+
+    <!-- 6. What Changes Everything Section (dark tan) -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>What Changes Everything</h2>
+            <p>After years of producing records, touring internationally as a Musical Director, and watching artists at every level work through the same struggles, one thing became clear:</p>
+            <p>The prolific artists aren't the ones who know more. They're the ones who trust their instincts—and have someone skilled enough to help them see past their blocks.</p>
+            <p>That's exactly what the Song Deep Dive provides.</p>
+        </div>
+    </section>
+
+    <!-- 7. How It Works + CTA (light tan) -->
+    <section class="section">
+        <div class="container">
+            <h2>Here's How It Works</h2>
+            <p>For 60 focused minutes, we work on whatever's actually stopping you from finishing. Bring your works in progress—rough demos or nearly-done tracks. I'll listen with the ears of someone who's:</p>
+            <div class="benefits">
+                <ul>
+                    <li>Produced tracks with millions of streams</li>
+                    <li>Toured internationally with major label artists</li>
+                    <li>Overcome the same perfectionism that's stopping you</li>
+                    <li>Helped artists go from 30 unfinished demos to completed albums</li>
+                </ul>
+            </div>
+            <p>We'll identify exactly what's blocking you—maybe it's a chorus that won't come, a production decision you're struggling with, or a deeper fear of being truly seen.</p>
+            <p>But we won't stop at identifying problems. We'll map out your exact next steps.</p>
+            <div class="cta-center">
+                <a href="#booking" class="cta-button">Book Your Song Deep Dive →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. What You'll Walk Away With Section (dark tan) -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2>What You'll Walk Away With</h2>
+            <p>Within 24 hours of our call:</p>
+            <div class="benefits">
+                <ul>
+                    <li>Your recorded session (lifetime access) to revisit every insight</li>
+                    <li>A personalized Action Plan detailing your next steps—specific, practical, achievable</li>
+                    <li>The Songwriters Companion Notion template—my personal system for organizing ideas and finishing songs</li>
+                    <li>Home Recording Guide for capturing professional vocals and guitars in your space</li>
+                    <li>$200 credit toward full production (valid 30 days)</li>
+                </ul>
+            </div>
+            <p>But more than that, you'll leave with clarity. With momentum. With the confidence that comes from having someone who truly understands both the technical and emotional landscape of your creative process.</p>
+        </div>
+    </section>
+
+    <!-- 9. Matt Jarvis Testimonial (light tan) -->
+    <section class="testimonial testimonial-light">
+        <div class="container">
+            <img src="avatars/matt_jarvis_360.jpg" alt="Matt Jarvis (Twin Tacoma)" class="testimonial-avatar">
+            <div class="testimonial-quote">"Pete's been helping me develop my songwriting and production. It's been super useful to have someone give me extremely practical advice and actionable steps to follow, especially when you see it start to work. Very happy!"</div>
+            <div class="testimonial-author">– Matt Jarvis (Twin Tacoma), Self-Producing Artist</div>
+        </div>
+    </section>
+
+    <!-- 10. Qualification Section + CTA (dark tan) -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="qualification">
+                <div class="qualification-box for-you">
+                    <h4>This Is For You If:</h4>
+                    <ul>
+                        <li>✓ You have real songs that deserve to be finished</li>
+                        <li>✓ You're tired of the endless loop of revision without resolution</li>
+                        <li>✓ You want honest feedback from someone who respects your vision</li>
+                        <li>✓ You're ready to move from paralysis to completion</li>
+                    </ul>
+                </div>
+                <div class="qualification-box not-for-you">
+                    <h4>This Isn't For You If:</h4>
+                    <ul>
+                        <li>✗ You're looking for shortcuts to "viral hits"</li>
+                        <li>✗ You want someone to write your songs for you</li>
+                        <li>✗ You're not ready to be vulnerable and honest about your work</li>
+                        <li>✗ You've never written songs before and want to see what it's like</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cta-center">
+                <a href="#booking" class="cta-button">Book Your Song Deep Dive →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. Let's Be Honest Section (light tan) -->
+    <section class="section">
+        <div class="container">
+            <h2>Let's Be Honest</h2>
+            <p>You can keep wrestling with the same doubts, the same circular revisions, the same crisis of confidence every time you work on your songs.</p>
+            <p>Or you could spend one hour getting the clarity, direction, and momentum you need to finally finish what you've started.</p>
+        </div>
+    </section>
+
+    <!-- 12. Pricing Section + CTA (dark tan - continues from previous) -->
+    <section class="pricing" id="booking">
+        <div class="container">
+            <h2>Book Your Song Deep Dive</h2>
+            <div class="price">$200</div>
+            <p class="price-note">(Includes $200 production credit—essentially free if we continue working together)</p>
+            <p style="margin-bottom: 40px;">Limited to 3 sessions per week. Spots fill quickly.</p>
+            <a href="https://calendly.com/petecovington/song-deep-dive" class="cta-button">Book Your Song Deep Dive →</a>
+        </div>
+    </section>
+
+    <!-- 13. FAQ Section (light tan) -->
+    <section class="faq">
+        <div class="container">
+            <h2>FAQ</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do I need a polished demo to book a call?</div>
+                <div class="faq-answer">Nope. Voice memo, rough demo, nearly-finished track—wherever you're stuck, we start there.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What if I want ongoing support?</div>
+                <div class="faq-answer">This call is a powerful standalone reset. If you want to explore production or longer-term collaboration, we can discuss options that make sense for your project.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What happens after I book?</div>
+                <div class="faq-answer">You'll pick your time slot and send me your tracks. I'll listen in advance so we dive straight into solutions, not setup.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">I'm a producer who struggles with lyrics. Is this for me?</div>
+                <div class="faq-answer">Absolutely. We'll work on practical lyric-writing methods you can use immediately—whether for your own songs or co-writes.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you take songwriting credit or royalties?</div>
+                <div class="faq-answer">No. This is about empowering YOU. Any suggestions I make are yours to use (or ignore) as you see fit. No splits, writing credits or royalties.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Can I reschedule if something comes up?</div>
+                <div class="faq-answer">Yes. You can reschedule up to 24 hours before your session.</div>
+            </div>
+
+            <div class="contact-note">
+                <strong>Still have questions?</strong><br>
+                Shoot me an email: pete@petecovington.com
+            </div>
+        </div>
+    </section>
+</body>
+</html>
